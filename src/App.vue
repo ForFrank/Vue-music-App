@@ -1,11 +1,16 @@
 <script setup>
-import HelloWorld from './components/HelloWorld.vue'
+import HelloWorld from "./components/HelloWorld.vue";
 </script>
 
 <template>
-  <router-link to='/'>首页</router-link>
-  <router-link to='/about'>关于</router-link>
-  <router-view></router-view>
+  <router-link to="/">首页</router-link>
+  <router-link to="/about">关于</router-link>
+
+  <router-view v-slot="{ Component }">
+    <transition name="route" mode="out-in">
+      <component :is="Component" />
+    </transition>
+  </router-view>
 </template>
 
 <style>
