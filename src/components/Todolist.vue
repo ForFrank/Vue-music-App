@@ -59,6 +59,7 @@ function useTodos() {
   let showModal = ref(false);
   let animate = reactive({ show: false, el: null });
   function addTodo() {
+    debugger;
     if (!title.value) {
       showModal.value = true;
       setTimeout(() => {
