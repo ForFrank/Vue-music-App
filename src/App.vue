@@ -48,7 +48,20 @@
   </el-container>
 </template>
 
-<script setup></script>
+<script setup>
+import { ref } from "vue";
+
+function fib(n) {
+  let arr = [1, 1];
+  let i = 2;
+  while (i <= n) {
+    arr[i] = arr[i - 1] + arr[i - 2];
+    i++;
+  }
+  return arr[n];
+}
+let count = ref(fib(38));
+</script>
 <style>
 .el-header,
 .el-footer {
